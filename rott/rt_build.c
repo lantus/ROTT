@@ -536,8 +536,8 @@ void PositionMenuBuf( int angle, int distance, boolean drawbackground )
       {
       VL_DrawPostPic (W_GetNumForName("trilogo"));
       }
-   px=FixedMulShift(distance,costable[angle&(FINEANGLES-1)],16);
-   py=FixedMulShift(-distance,sintable[angle&(FINEANGLES-1)],16);
+   px=FixedMul(distance,costable[angle&(FINEANGLES-1)]);
+   py=FixedMul(-distance,sintable[angle&(FINEANGLES-1)]);
    CalcPlanes(px,py,(angle+ANG180)&(FINEANGLES-1));
    DrawTransformedPlanes();
    DrawPlanePosts();

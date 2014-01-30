@@ -2238,7 +2238,7 @@ void WallRefresh (void)
       if (player->flags&FL_SHROOMS)
          {
          viewangle = (player->angle + FixedMulShift(FINEANGLES,sintable[(GetTicCount()<<5)&(FINEANGLES-1)],(16+4)))&(FINEANGLES-1);
-         ChangeFocalWidth(FixedMulShift(40,sintable[(GetTicCount()<<5)&(FINEANGLES-1)],16));
+         ChangeFocalWidth(FixedMul(40,sintable[(GetTicCount()<<5)&(FINEANGLES-1)]));
          }
       else
          viewangle = player->angle;

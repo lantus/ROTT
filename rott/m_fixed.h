@@ -56,13 +56,17 @@ __inline__ fixed FixedDiv2(fixed a, fixed b)
 #endif
 
 
-__inline__ fixed FixedMulShift(fixed a, fixed b, fixed shift)
+__inline__ fixed FixedMulShift(fixed eins, fixed zwei, fixed shift)
 {
-	__int64 x = a;
-	__int64 y = b;
-	__int64 z = x * y;
+__asm __volatile
+	("muls.l %1,%1:%0 \n\t"
+	 
+					 
+	  : "=d" (eins), "=d" (zwei)
+	  : "0" (eins), "1" (zwei)
+	);
 
-	return (((unsigned __int64)z) >> shift) & 0xffffffff;
+	return (((unsigned __int64)eins) >> shift) & 0xffffffff;
 }
 
  

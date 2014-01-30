@@ -1,21 +1,21 @@
 # Project: ROTT
 # Compiler: m68k-Amiga-OS3
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ 6.10.2 on 07/01/14 22:35
+# Makefile created by wxDev-C++ 6.10.2 on 29/01/14 22:22
 
 CPP       = m68k-amigaos-g++.exe
 CC        = m68k-amigaos-gcc.exe
 WINDRES   = windres.exe
 OBJ       = rott/obj/byteordr.o rott/obj/cin_actr.o rott/obj/cin_efct.o rott/obj/cin_evnt.o rott/obj/cin_glob.o rott/obj/cin_main.o rott/obj/cin_util.o rott/obj/dosutil.o rott/obj/engine.o rott/obj/isr.o rott/obj/modexlib.o rott/obj/rt_actor.o rott/obj/rt_battl.o rott/obj/rt_build.o rott/obj/rt_cfg.o rott/obj/rt_com.o rott/obj/rt_crc.o rott/obj/rt_debug.o rott/obj/rt_dmand.o rott/obj/rt_door.o rott/obj/rt_draw.o rott/obj/rt_err.o rott/obj/rt_floor.o rott/obj/rt_game.o rott/obj/rt_in.o rott/obj/rt_main.o rott/obj/rt_map.o rott/obj/rt_menu.o rott/obj/rt_msg.o rott/obj/rt_net.o rott/obj/rt_playr.o rott/obj/rt_rand.o rott/obj/rt_scale.o rott/obj/rt_sound.o rott/obj/rt_spbal.o rott/obj/rt_sqrt.o rott/obj/rt_stat.o rott/obj/rt_state.o rott/obj/rt_str.o rott/obj/rt_swift.o rott/obj/rt_ted.o rott/obj/rt_util.o rott/obj/rt_vid.o rott/obj/rt_view.o rott/obj/scriplib.o rott/obj/w_wad.o rott/obj/winrott.o rott/obj/z_zone.o rott/obj/i_timer.o rott/obj/fx_man.o rott/obj/amiga_median.o rott/obj/watcom.o
 LINKOBJ   = rott/obj/byteordr.o rott/obj/cin_actr.o rott/obj/cin_efct.o rott/obj/cin_evnt.o rott/obj/cin_glob.o rott/obj/cin_main.o rott/obj/cin_util.o rott/obj/dosutil.o rott/obj/engine.o rott/obj/isr.o rott/obj/modexlib.o rott/obj/rt_actor.o rott/obj/rt_battl.o rott/obj/rt_build.o rott/obj/rt_cfg.o rott/obj/rt_com.o rott/obj/rt_crc.o rott/obj/rt_debug.o rott/obj/rt_dmand.o rott/obj/rt_door.o rott/obj/rt_draw.o rott/obj/rt_err.o rott/obj/rt_floor.o rott/obj/rt_game.o rott/obj/rt_in.o rott/obj/rt_main.o rott/obj/rt_map.o rott/obj/rt_menu.o rott/obj/rt_msg.o rott/obj/rt_net.o rott/obj/rt_playr.o rott/obj/rt_rand.o rott/obj/rt_scale.o rott/obj/rt_sound.o rott/obj/rt_spbal.o rott/obj/rt_sqrt.o rott/obj/rt_stat.o rott/obj/rt_state.o rott/obj/rt_str.o rott/obj/rt_swift.o rott/obj/rt_ted.o rott/obj/rt_util.o rott/obj/rt_vid.o rott/obj/rt_view.o rott/obj/scriplib.o rott/obj/w_wad.o rott/obj/winrott.o rott/obj/z_zone.o rott/obj/i_timer.o rott/obj/fx_man.o rott/obj/amiga_median.o rott/obj/watcom.o
-LIBS      = -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib" -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib/libb/libnix" -s -noixemul -noixemul rott/c2p1x1_8_c5_bm_040.o rott/c2p1x1_6_c5_bm_040.o rott/c2p1x1_8_c5_bm.o rott/c2p1x1_6_c5_bm.o rott/m_mmu.o  -s 
+LIBS      = -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib" -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib/libb/libnix" -s -noixemul -noixemul rott/c2p1x1_8_c5_bm_040.o rott/c2p1x1_6_c5_bm_040.o rott/c2p1x1_8_c5_bm.o rott/c2p1x1_6_c5_bm.o rott/m_mmu.o rott/indivision.o  -s 
 INCS      = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL"
 CXXINCS   = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include/SDL"
 RCINCS    = --include-dir "C:/CROSSC~1/AMIDEV~1/include"
 BIN       = rott/Release/ROTT.exe
 DEFINES   =  -DAMIGA -DPLATFORM_UNIX
-CXXFLAGS  = $(CXXINCS) $(DEFINES) -m68060 -fomit-frame-pointer   -s -noixemul -fexpensive-optimizations -O2
-CFLAGS    = $(INCS) $(DEFINES) -m68060 -fomit-frame-pointer   -s -noixemul -fexpensive-optimizations -O2
+CXXFLAGS  = $(CXXINCS) $(DEFINES) -m68020 -fomit-frame-pointer   -s -noixemul -fexpensive-optimizations -O2
+CFLAGS    = $(INCS) $(DEFINES) -m68020 -fomit-frame-pointer   -s -noixemul -fexpensive-optimizations -O2
 GPROF     = gprof.exe
 RM        = rm -f
 LINK      = m68k-amigaos-g++.exe

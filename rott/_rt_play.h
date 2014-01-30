@@ -80,7 +80,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #define SGN(x)                 (x>0 ? 1 : -1)
 #define NETMOM    (BASEMOVE+0x10000)
 
-#define DISTANCE(x1,x2,y1,y2)   (FixedMulShift((x1-x2),(x1-x2),16)+FixedMulShift((y1-y2),(y1-y2),16))
+#define DISTANCE(x1,x2,y1,y2)   (FixedMul((x1-x2),(x1-x2))+FixedMul((y1-y2),(y1-y2)))
 
 #define TILTLIMIT     95
 #define PLAYERSTEPTIME 0xf000

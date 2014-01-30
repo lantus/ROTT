@@ -2838,11 +2838,11 @@ void PollAssassin (void)
 
    strafeAngle = (player->angle - FINEANGLES/4)&(FINEANGLES-1);
 
-   controlbuf[0] += -(FixedMulShift (SWIFTStatus.pitch, viewcos,16))+
-                   FixedMulShift (-SWIFTStatus.roll, costable[strafeAngle], 16);
+   controlbuf[0] += -(FixedMul  (SWIFTStatus.pitch, viewcos ))+
+                   FixedMul  (-SWIFTStatus.roll, costable[strafeAngle] );
 
-   controlbuf[1] +=  FixedMulShift (SWIFTStatus.pitch, viewsin,16) -
-                   FixedMulShift (-SWIFTStatus.roll, sintable[strafeAngle], 16);
+   controlbuf[1] +=  FixedMul  (SWIFTStatus.pitch, viewsin) -
+                   FixedMul  (-SWIFTStatus.roll, sintable[strafeAngle]);
 
    yaw = abs(SWIFTStatus.yaw);
    acc = 0;
@@ -4192,7 +4192,7 @@ void PlayerTiltHead (objtype * ob)
 
    if (ob->flags&FL_SHROOMS)
       {
-      ob->yzangle = FixedMulShift(SHROOMYZANGLE,sintable[(oldpolltime<<6)&(FINEANGLES-1)],16);
+      ob->yzangle = FixedMul(SHROOMYZANGLE,sintable[(oldpolltime<<6)&(FINEANGLES-1)]);
       Fix(ob->yzangle);
       return;
       }
