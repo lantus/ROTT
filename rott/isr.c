@@ -750,9 +750,7 @@ void I_ShutdownKeyboard (void)
 	*(short *)0x41c = *(short *)0x41a;      // clear bios key buffer
 }
 #else
-
-#include "SDL.h"
-
+ 
 static int ticoffset;    /* offset for SDL_GetTicks() */
 static int ticbase;      /* game-supplied base */
 
