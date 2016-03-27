@@ -47,12 +47,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <proto/asl.h>
 #include <proto/keymap.h>
 #include <proto/lowlevel.h>
- 
-#include <cybergraphics/cybergraphics.h>
- 
+
 #include <clib/commodities_protos.h> 
+#include <cybergraphx/cybergraphics.h> 
 #include <proto/cybergraphics.h>
-#include <inline/cybergraphics.h>
+ 
  
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -591,7 +590,7 @@ void GraphicsMode ( void )
                          TAG_END);                 
         }
     
-        if (cpu_type >= 68040 && vidMode != VideoModeRTG)
+        if ((CheckParm("MMU")) && cpu_type >= 68040 && vidMode != VideoModeRTG)
     	{
     		mmu_chunky = mmu_mark(screenpixels,(320 * 200 + 4095) & (~0xFFF),CM_WRITETHROUGH,SysBase);
     		mmu_active = 1;
